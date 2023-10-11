@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en" ng-app="quantum-ventura-inc">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="description" content="Quantum Ventura Inc">
+  <title ng-bind="common.title">Quantum Ventura Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FONT FOR THE ENTIRE SITE (CHECK IF THIS IS CORRECT!!) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Social Media Icons from Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+
+ 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
+
+
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="app.css">
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+
+  <style>
+
+    .navbar .container-fluid{
+      color: rgb(225, 217, 209);
+    }
+
+    .navbar-brand {
+      background-color: rgb(61, 61, 61);
+      border-radius: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      transition: transform 0.3s ease-in-out;
+      
+    }
+
+    
+
+    .navbar-brand:hover {
+      background-color: rgb(61, 61, 61);
+      transform: scale(1.08); /* Adjust the scale value to control the zoom effect */
+      box-shadow: 0 0 20px rgba(0, 1, 2, 0.2); /* Adjust the box shadow as needed */
+    }
+
+    
+
+
+    .opening-paragraph {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 20px;
+      color: rgb(225, 217, 209);
+    
+    }
+
+    /* .text-next-to-container { */
+      /* display: flex;
+      align-items: center; */
+      /* float: left;
+      margin-left: 40px; */
+    /* } */
+  
+    .custom-card {
+      width: 100%;
+      height: 100%;
+      /* border-radius: 30px; */
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      color: white;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      /* flex-basis: 0 0 calc(50% - 10px);
+      margin-bottom: 40px;
+      padding: 10px; */
+  
+      
+    }
+
+    /* @media (max-width: 768px) {
+      .custom-card {
+        flex-basis: 0 0 calc(100% - 10px);
+      }
+    } */
+
+    /* .custom-card:nth-child(n+3) {
+    flex-basis: calc(100% - 10px); /* Set full width for cards starting from the third card */
+  /* } */
+
+    .custom-card:hover {
+      transform: scale(1.02); /* Adjust the scale value to control the zoom effect */
+      box-shadow: 0 0 20px rgba(0, 1, 2, 0.2); /* Adjust the box shadow as needed */
+    }
+
+    /* THIS IS FOR THE SECOND ROW!!! */
+    /* Custom class for the second row */
+    /* .row:nth-of-type(1) .col-lg-4:nth-child(1):hover .custom-card, */
+    .row:nth-of-type(2) .col-lg-4:nth-child(2):hover .custom-card {
+      transform: scale(1.02); /* Adjust the scale value to control the zoom effect */
+      box-shadow: 0 0 20px rgba(0, 1, 2, 0.2); /* Adjust the box shadow as needed */
+    }
+
+    .custom-card::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      /* border-radius: 50%; */
+      background-color: rgba(0, 0, 0, 0.05); /* Adjust the background color and opacity as needed */
+      z-index: -1;
+      
+    }
+
+  
+
+    .custom-card .card-img-top {
+      object-fit: cover;
+      height: 100px;
+    }
+
+
+    .container {
+    
+      
+    }
+
+    .inner-custom-card {
+      max-width: 100%;
+      /* width: 300px; */
+      /* max-width: 450px; */
+      margin: 80px auto 0;
+      padding: 10px;
+      /* margin-bottom: 20px; */
+      /* box-sizing: border-box; */
+      max-height: 450px;
+      overflow-y: auto;
+      overflow-x: auto;
+
+
+
+      /* margin-bottom: 60px; */
+      
+      /* height: 40%; */
+      /* border-radius: 30px; */
+      /* overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      color: white;
+      cursor: pointer; */
+    }
+
+    .row-separator {
+      height: 70px;
+    }
+
+    /* BUTTON DETAILING */
+
+    .circle-button {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      /* border-radius: 70%; */
+      padding: 0;
+      line-height: 30px;
+      text-align: center;
+      bottom: 10px;
+      right: 10px;
+      background: url('images/arrow_forward_ios_FILL0_wght400_GRAD0_opsz48.png') center center no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      
+
+    }
+
+    .button-image {
+      position: relative;
+      z-index: 1;
+    }
+
+ 
+
+  </style>
+</head>
+
+
+
+<body>
+ 
+   <!-- HEADER!! -->
+   <div class="navbar navbar-dark fixed-top" style="background-color: rgb(33,33,33); padding-top: 20px; padding-bottom: 20px;">
+      <a class="navbar-brand" href="/">
+        <div class="container-fluid">
+            <!-- <img src="" alt="" width="" height="" class="d-inline-block align-text-top"> -->
+            Quantum Ventura Inc.
+        </div>
+      </a>
+    </div>
+
+    
+
+
+<!-- OPENING PARAGRAPH BELOW THE NAV BAR TITLE -->
+
+  <!-- I WANT A COOL TRANSITION FOR THIS!!!-->
+  <div class="opening-paragraph">
+    <p>
+      Headquartered in the heart of Silicon Valley at the historic San Jose downtown, Quantum Ventura Inc creates innovative & groundbreaking systems and technologies in the areas of Artificial Intelligence/Machine Learning, AI & ML Vertification
+      & Validation, Cybersecurity, Secure Mobile technology (Diamond Droid), and HPC-driven Big Data Analytics.
+    </p>
+  </div>
+
+  
+
+ 
+
+  <div class="container">
+
+  
+    <!-- FIRST ROW OF BOXES -->
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+        <div id="card-what-we-do" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-what-we-do").onclick = function() {
+              location.href = "/what-we-do.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">What We Do</h5>
+          <div class="card-body">
+            <img src="image1.jpg" class="card-img-top" alt="Image 1">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 20px;">
+              <p class="card-text" style="width: 100%; font-size: 11px; text-align:left; color: black; margin: 0;">
+                Conducting advanced R&D for Federal Government Customers in the areas of Advanced Machine Learning, Hyperspectral Imaging, Hypersonics, Cybersecurity, Advanced Computer Vision, Synthetic Aperture Radar, Metamaterials based MetaOptics, etc.
+              </p>
+            </div>
+              <button id="what-we-do" class="btn btn-info circle-button" style="border-radius: 70%;"></button>
+                <script type="text/javascript">
+                  document.getElementById("what-we-do").onclick = function() {
+                    location.href = "/what-we-do.html";
+                  };
+                </script>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+        <div id="card-who-we-are" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-who-we-are").onclick = function() {
+              location.href = "/who-we-are.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">Who We Are</h5>
+          <div class="card-body">
+            <img src="image2.jpg" class="card-img-top" alt="Image 2">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 30px;">
+
+            <p class="card-text" style=" font-size: 11px; text-align:left; color: black">
+              Come and meet the brains behind the operations (idk)
+            </p>
+            </div>
+            <button id="who-we-are" class="btn btn-info circle-button" href="/client/" style="border-radius: 70%;"></button>
+              <script type="text/javascript">
+                document.getElementById("who-we-are").onclick = function() {
+                  location.href = "/who-we-are.html";
+                };
+              </script>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+        <div id="card-cyberneuro" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-cyberneuro").onclick = function() {
+              location.href = "/cyberneuro.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">CyberNeuro RT</h5>
+          <div class="card-body">
+            <img src="image3.jpg" class="card-img-top" alt="Image 3">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 30px;">
+            <p class="card-text" style="font-size: 11px; text-align:left; color: black">
+              An AI/ML-Driven, Highly-Scalable, Real-Time Network Defense 
+              & Threat Intelligence tool with GPU or low-power neuromorphic chip deployment
+            </p>
+            </div>
+            <button id="cyberneuro" class="btn btn-info circle-button" href="/client/" style="border-radius: 70%;"></button>
+              <script type="text/javascript">
+                document.getElementById("cyberneuro").onclick = function() {
+                  location.href = "/cyberneuro.html";
+                };
+              </script>
+          </div>
+        </div>
+      </div>
+    </div>
+   <!-- </div> -->
+
+
+   <div class="row-separator">
+    <p class="text-in-between-rows" style="font-size: 15px; text-align: center;">
+      Quantum Ventura is a technology innovation company with a single mission of
+      delivering customer-centric advanced solutions to US federal & state governments and private sector customers. 
+    </p>
+   </div>
+
+    <!-- SECOND ROW OF BOXES -->
+  
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-5">
+        <div id="e-recov" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-cyberneuro").onclick = function() {
+              location.href = "/cyberneuro.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">E-RECOV</h5>
+          <div class="card-body">
+            <img src="image4.jpg" class="card-img-top" alt="Image 4">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 30px;">
+            <p class="card-text" style="font-size: 11px; text-align:left; color: black">
+             Electrochemical Recycling Electronic Constituents of Value
+            </p>
+            </div>
+            <button id="e-recov" class="btn btn-info circle-button" href="/client/" style="border-radius: 70%;"></button>
+              <script type="text/javascript">
+                document.getElementById("e-recov").onclick = function() {
+                  location.href = "/e-recov.html";
+                };
+              </script>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+        <div id="card-diamond-droid" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-diamond-droid").onclick = function() {
+              location.href = "/diamond-droid.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">Quantum X | Diamond-Droid</h5>
+          <div class="card-body">
+            <img src="image5.jpg" class="card-img-top" alt="Image 5">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 30px;">
+            <p class="card-text" style="font-size: 11px; text-align:left; color: black">
+              Kernel-Level Security: QuantumX is bleeding-edge technology offered 
+              by Quantum Ventura that utilizes the Diamond-Droid technology
+            </p>
+            </div>
+            <button id="diamond-droid" class="btn btn-info circle-button" href="/client/" style="border-radius: 70%;"></button>
+              <script type="text/javascript">
+                document.getElementById("diamond-droid").onclick = function() {
+                  location.href = "/diamond-droid.html";
+                };
+              </script>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
+        <div id="card-our-partnerships" class="card custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191);">
+          <script type="text/javascript">
+            document.getElementById("card-our-partnerships").onclick = function() {
+              location.href = "/our-partnerships.html";
+            };
+          </script>
+          <h5 class="card-title text-center mb-0">Our Partnerships</h5>
+          <div class="card-body">
+            <img src="image6.jpg" class="card-img-top" alt="Image 6">
+            <div class="card inner-custom-card" style="border-radius: 30px; background-color: rgb(191, 191, 191); margin-bottom: 35px;">
+            <p class="card-text" style="font-size: 11px; text-align:left; color: black">
+              Quantum Ventura Inc. is certified by the Defense COntractor Audit Agency (DCAA),
+              the Department of Transportation (DOT), HubZone located, and several state-level certifications.
+            </p>
+            </div>
+            <button id="our-partnerships" class="btn btn-info circle-button" href="/client/" style="border-radius: 70%;"></button>
+              <script type="text/javascript">
+                document.getElementById("our-partnerships").onclick = function() {
+                  location.href = "/our-partnerships.html";
+                };
+              </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+ 
+    
+
+
+<div class="footer">
+  
+  <hr>
+  <footer> 
+    <!-- ADD FOOTER INFORMATION OF LINKS THAT ARE ON THEIR CURRENT WEBSITE!!! -->
+    <p>
+      &copy; 2023 Quantum Ventura Inc. All Rights Reserved.
+      <ul class="call-email">
+        <li>
+          <i>Call us at +1 (855) AIML - 4 - CA</i>
+        </li>
+        <li>
+          <a href="mailto:inquiries@quantumventura.com" class="email-icon-link">
+            <i class="fas fa-envelope"> inquiries@quantumventura.com</i>
+          </a>
+        </li>
+      </ul>
+      <!-- <a type="button" href="https://github.com/soygul/koan" class="btn btn-primary"><strong>View on GitHub</strong></a> -->
+      <!-- <button type="button" ng-click="common.clearDatabase()" class="btn btn-xs btn-warning pull-right"><strong>Clear Database</strong></button> -->
+      <ul class="social-media-links">
+        <li>
+          <a href="https://github.com/Globalhelpforall" class="icon-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/quantum-ventura/" class="icon-link" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=pJ0H-g1RkeY" class="icon-link" target="_blank">
+            <i class="fab fa-youtube-square"></i>
+          </a>
+        </li>
+      </ul>
+    
+
+    </p>
+    
+  </footer>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-elastic/elastic.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="client/app.js"></script>
+<script src="client/modules/common/common.module.js"></script>
+<script src="client/modules/common/api.service.js"></script>
+<script src="client/modules/home/home.module.js"></script>
+<script src="client/modules/home/home.component.js"></script>
+<script src="client/modules/profile/profile.module.js"></script>
+<script src="client/modules/profile/profile.component.js"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+</body>
+</html>
